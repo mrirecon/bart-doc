@@ -91,9 +91,9 @@ If you are a git user, you can simply clone our public repository::
 
 
 Otherwise, please download the latest version as a zip file
-from Github::
+from Github:
 
-	http://github.com/mrirecon/bart/releases/latest
+    http://github.com/mrirecon/bart/releases/latest
 
 and unpack it somewhere on your computer.
 

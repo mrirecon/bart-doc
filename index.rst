@@ -13,8 +13,7 @@ Contents:
 
    intro
    install
-   ecalib
-   pics
+   tools
 
 
 Indices and tables
