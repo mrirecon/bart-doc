@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to BART's documentation!
+BART documentation
 ================================
 
 Contents:
@@ -13,7 +13,10 @@ Contents:
 
    intro
    install
+   data
    tools
+   impl
+   iter
 
 
 Indices and tables

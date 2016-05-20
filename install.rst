@@ -17,15 +17,15 @@ the ISMRM Raw Data format when linking with the ISMRMRD library (version 0.5.2)
 (http://ismrmrd.sourceforge.net/).
 
 
-In the following, the symbol '$' indicates a shell prompt.
-Do not type '$' when entering commands.
+In the following, the symbol ``$`` indicates a shell prompt.
+Do not type ``$`` when entering commands.
 
 
 
 Linux
 ------------------
 
-BART runs on any recent Linux distribution.
+BART should run on any recent Linux distribution.
 
 To install the required libraries on Debian and Ubuntu run::
 

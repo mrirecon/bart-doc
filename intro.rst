@@ -1,16 +1,30 @@
 Introduction
 ============
-This is the documentation for BART. The Berkeley Advanced Reconstruction Toolbox (BART) is a free and open-source image-reconstruction framework for Computational Magnetic Resonance Imaging. It consists of a programming library and a toolbox of command-line programs. The library provides common operations on multi-dimensional arrays, Fourier and wavelet transforms, as well as generic implementations of iterative optimization algorithms. The command-line tools provide direct access to basic operations on multi-dimensional arrays as well as efficient implementations of many calibration and reconstruction algorithms for parallel imaging and compressed sensing.
 
-This is meant to be a guide for BART usage and development. Since this is hand-written rather than machine generated, some code snippets might be outdated. However, the general philosophy should remain the same. If you have any questions about the implementation details or find errors in this documentation, please send them to our mailing list https://lists.eecs.berkeley.edu/sympa/info/mrirecon.
+Overview
+--------
+
+BART is a free and open-source image-reconstruction framework for Computational Magnetic Resonance Imaging. It consists of a programming library and a toolbox of command-line programs.
+
+The BART library provides common operations on multi-dimensional arrays, Fourier and wavelet transforms, as well as generic implementations of iterative optimization algorithms.
+
+The BART tools provide direct access to basic operations on multi-dimensional arrays as well as efficient implementations of many calibration and reconstruction algorithms for parallel imaging and compressed sensing.
+
+This documentation is meant to be a guide for BART usage and development. Since this is hand-written rather than machine generated, some code snippets might be outdated by the time you read them. However, the general idea should remain the same.
+
+If you have any questions about the implementation details or find errors in this documentation, please send them to our mailing list https://lists.eecs.berkeley.edu/sympa/info/mrirecon.
 
 
 Resources for BART
--------
+------------------
 
 There are many resources for getting started with BART.
 
-For tutorial-style code demos, please visit the github repository: https://github.com/mikgroup/bart-workshop. The material was presented at the `2016 ISMRM Workshop on Data Sampling & Image Reconstruction <http://www.ismrm.org/workshops/Data16/>`_.
+For tutorial-style code demos, please visit the github repository:
+
+    https://github.com/mikgroup/bart-workshop.
+
+The material was presented at the `2016 ISMRM Workshop on Data Sampling & Image Reconstruction <http://www.ismrm.org/workshops/Data16/>`_ as a software demo.
 
 Examples of using BART in MATLAB is available at:
 
