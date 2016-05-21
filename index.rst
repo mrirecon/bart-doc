@@ -15,8 +15,10 @@ Contents:
    install
    data
    tools
-   impl
    iter
+   linops
+   prox
+   impl
 
 
 Indices and tables

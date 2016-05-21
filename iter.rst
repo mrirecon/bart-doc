@@ -7,6 +7,15 @@ Implementation of the operators is separated from the implementation of the iter
 ``iter`` interfaces
 -------------------
 
+There are three ``iter`` interfaces that allow simplified access of the algorithms: ``iter``, ``iter2``, and ``iter3``. The ``iter`` interfaces use the :ref:`linop` and :ref:`operatorp`.
+
+The ``iter`` interface considers the problem :math:`\min_x \frac{1}{2} \| Ax - y \|_2^2 + g(x)`. It requires :math:`A^\top A`, :math:`A^\top y`, and :math:`\text{prox}_g` as inputs and outputs `x`. The ``iter`` interface supports ``cg``, ``ist``, ``fista`` and ``admm``. :math:`\text{prox}_g` has to be ``NULL`` for ``cg``.
+
+The ``iter2`` interface considers the problem :math:`\min_x \frac{1}{2} \| Ax - y \|_2^2 + \sum_i f_i (G_i x)`. It requires :math:`A^\top A`, :math:`A^\top y`, :math:`\text{prox}_{f_i}`, and :math:`G_i` ``linops`` as inputs and outputs `x`. The ``iter2`` interface supports ``cg``, ``ist``, ``fista`` and ``admm``. :math:`\text{prox}_{f_i}` has to be ``NULL`` for ``cg``. For ``ist`` and ``fista``, the number of :math:`\text{prox}_{f_i}` has to be one.
+
+The rest of the algorithms belongs to ``iter3``. 
+
+
 ``cg``
 -------
 
