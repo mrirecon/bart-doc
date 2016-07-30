@@ -46,11 +46,24 @@ Xcode command line tools are required and can be installed by running::
 
     $ xcode-select --install
 
+Mac installation with Homebrew
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To install Homebrew (http://brew.sh), run::
+
+    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+To install BART, run ::
+  
+    $ brew install homebrew/science/bart
+
+
+Mac installation with Macports
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 We recommend installing a newer version of gcc (4.7 seems to work) from MacPorts (http://www.macports.org/). To install the required libraries, run::
 
-    $ sudo port install fftw-3-single
-    $ sudo port install gcc47
-    $ sudo port install libpng
+    $ sudo port install fftw-3-single gcc47 openblas
 
     (optional)
     $ sudo port install octave

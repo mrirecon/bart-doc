@@ -58,8 +58,8 @@ The dimensions for the kspace samples are usually assigned in the following orde
   0   1
   1   readout dimension
   2   Number of TRs
-  3   1
-  4   Number of coils
+  3   Number of coils
+  4   1
   ...
   ...
   
