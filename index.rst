@@ -9,9 +9,8 @@ Contents:
    intro
    install
    data
+   interface
    tools
-   iter
-   linops
-   prox
+   api
    impl
    utest

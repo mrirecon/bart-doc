@@ -7,7 +7,7 @@ Prerequisites
 ------------------
 
 BART requires the GCC compiler, the FFTW library, and optionally CUDA for NVIDIA GPU computing.
-(see recon/Makefile to turn options on or off)
+(see :ref:`cudaon`)
 
 The software can be used in combination with Matlab, python or octave.
 
@@ -18,8 +18,7 @@ the ISMRM Raw Data format when linking with the ISMRMRD library (version 0.5.2)
 
 
 In the following, the symbol ``$`` indicates a shell prompt.
-Do not type ``$`` when entering commands.
-
+Please do not type ``$`` when entering commands.
 
 
 Linux
@@ -46,6 +45,15 @@ Xcode command line tools are required and can be installed by running::
 
     $ xcode-select --install
 
+
+Mac installation with Macports
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We recommend installing a newer version of gcc (4.7 seems to work) from MacPorts (http://www.macports.org/). To install the required libraries, run::
+
+    $ sudo port install fftw-3-single gcc47 openblas
+
+
 Mac installation with Homebrew
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -56,21 +64,6 @@ To install Homebrew (http://brew.sh), run::
 To install BART, run ::
   
     $ brew install homebrew/science/bart
-
-
-Mac installation with Macports
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-We recommend installing a newer version of gcc (4.7 seems to work) from MacPorts (http://www.macports.org/). To install the required libraries, run::
-
-    $ sudo port install fftw-3-single gcc47 openblas
-
-    (optional)
-    $ sudo port install octave
-
-    (optional)
-    install version 0.5.2 of the ISMRMRD library
-
 
 
 Windows
@@ -95,7 +88,7 @@ An alternative to using Cygwin is a virtual machine with Linux.
 
 
 
-Downloading and Compilation
+Download and Compilation
 --------------------------------
 
 If you are a git user, you can simply clone our public repository::
@@ -122,3 +115,15 @@ If you have installed the ISMRMRD library version 0.5.2, you can also
 build the ISMRM raw data import tool::
 
     $ make ismrmrd
+
+
+.. _cudaon:
+
+Optional: Turn on GPU acceleration
+--------------------------------------
+
+To turn on GPU acceleration using CUDA, you can toggle the CUDA flag in the `Makefile <https://github.com/mrirecon/bart/blob/master/Makefile>`_::
+
+  CUDA=1
+
+

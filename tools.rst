@@ -2,6 +2,7 @@ Tools
 =====
 This section focuses on a few main reconstruction tools in BART and details their usage and design.
 
+
 ``ecalib``
 ----------
 

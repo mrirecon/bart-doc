@@ -6,11 +6,18 @@ Linear Operators
 ``linop`` interface
 --------------------
 
+The ``linop`` interface provides an abstraction for linear operators. For each ``linop`` A, it supports forward operation, adjoint operation and normal operation.
+
 
 ``linop_chain``
 ---------------
 
 The ``linop_chain`` function is arguably the most powerful feature of the ``linop`` interface.
+Given two linops A and B, the composite linear operator A(B) can be chained together by doing::
+  
+  AB = linop_chain(A, B)
+
+This automatically chains the adjoint operation, and normal operation.
 
 ``fft``
 --------
@@ -24,10 +31,7 @@ The ``linop_chain`` function is arguably the most powerful feature of the ``lino
 ``sense``
 ---------
 
-``wavelet2``
--------------
-
-``wavelet3``
+``wavelet``
 -------------
 
 ``finite_diff``

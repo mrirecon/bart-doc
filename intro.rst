@@ -14,6 +14,43 @@ This documentation is meant to be a guide for BART usage and development. Since 
 
 If you have any questions about the implementation details or find errors in this documentation, please send them to our mailing list https://lists.eecs.berkeley.edu/sympa/info/mrirecon.
 
+List of Features
+----------------
+
+* Basic features
+  
+  * support for Linux, Mac OS X, and Windows (with Cygwin)
+  * multi-dimensional operations on arrays
+  * fast non-uniform Fourier Transform (nuFFT)
+  * multi-dimensional (divergence-free) wavelet transform
+  * parallel computation on multiple cores and with Graphical Processing Units (GPU)
+    
+* Iterative methods
+  
+  * Conjugate Gradients (CG)
+  * (Fast) Iterative Soft-Thresholding Algorithm (ISTA and FISTA)
+  * Alternating Direction Method of Multipliers (ADMM)
+  * Iteratively Regularized Gauss-Newton Method (IRGNM)
+    
+* Calibration methods for parallel MRI
+  
+  * direct calibration from k-space center
+  * Walsh's method
+  * ESPIRiT
+    
+* Reconstruction methods for MRI
+  
+  * iterative parallel imaging reconstruction: POCSENSE, SENSE
+  * compressed sensing and parallel imaging
+  * non-linear inverse reconstruction: NLINV (blind multi-channel deconvolution)
+  * calibration-less parallel imaging: SAKE (structured low-rank matrix completion)
+    
+* Regularization (in arbitrary dimensions)
+  
+  * Tikhonov
+  * total variation
+  * l1-wavelet
+  * (multi-scale) low-rank
 
 Resources for BART
 ------------------
