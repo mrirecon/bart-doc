@@ -11,6 +11,7 @@ Contents:
    data
    interface
    tools
+   viewer
    api
    impl
    utest

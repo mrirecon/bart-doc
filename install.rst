@@ -6,7 +6,7 @@ Installation
 Prerequisites
 ------------------
 
-BART requires the GCC compiler, the FFTW library, and optionally CUDA for NVIDIA GPU computing.
+BART requires the GCC compiler, the FFTW library, the BLAS/LAPACK library and optionally CUDA for NVIDIA GPU computing.
 (see :ref:`cudaon`)
 
 The software can be used in combination with Matlab, python or octave.
@@ -22,24 +22,17 @@ Please do not type ``$`` when entering commands.
 
 
 Linux
-------------------
+~~~~~
 
 BART should run on any recent Linux distribution.
 
 To install the required libraries on Debian and Ubuntu run::
 
-    $ sudo apt-get install gcc make libfftw3-dev liblapacke-dev libpng-dev
-
-    (optional)
-    $ sudo apt-get install octave
-
-    (optional)
-    install version 0.5.2 of the ISMRMRD library
-
+    $ sudo apt-get install gcc make libfftw3-dev liblapacke-dev
 
 
 Mac OS X
-------------------
+~~~~~~~~
 
 Xcode command line tools are required and can be installed by running::
 
@@ -47,15 +40,17 @@ Xcode command line tools are required and can be installed by running::
 
 
 Mac installation with Macports
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``````````````````````````````
 
-We recommend installing a newer version of gcc (4.7 seems to work) from MacPorts (http://www.macports.org/). To install the required libraries, run::
+Follow the instruction at https://www.macports.org/install.php to install Macports.
 
-    $ sudo port install fftw-3-single gcc47 openblas
+To install the required libraries, run::
+
+    $ sudo port install fftw-3-single gcc6 openblas
 
 
 Mac installation with Homebrew
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``````````````````````````````
 
 To install Homebrew (http://brew.sh), run::
 
@@ -67,7 +62,7 @@ To install BART, run ::
 
 
 Windows
-------------------
+~~~~~~~
 
 You can use BART on Windows using Cygwin:
 
@@ -78,7 +73,6 @@ Install Cygwin and select the following packages::
     Devel: gcc, make
     Math: fftw3, fftw3-doc, libfftw3-devel, libfftw3_3
     Math: liblapack-devel, liblapack-doc, liblapack0
-    Libs: libpng, libpng-devel
 
 
 Then use the cygwin shell to compile BART as described below.
@@ -125,5 +119,3 @@ Optional: Turn on GPU acceleration
 To turn on GPU acceleration using CUDA, you can toggle the CUDA flag in the `Makefile <https://github.com/mrirecon/bart/blob/master/Makefile>`_::
 
   CUDA=1
-
-

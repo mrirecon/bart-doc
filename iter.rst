@@ -4,34 +4,37 @@ Iterative Algorithms
 Implementation of the operators is separated from the implementation of the iterative algorithm itself and passed as a function pointer. A similar stategy called supermarionation has been described in Murphy et al.
 
 
-``iter`` interfaces
+iter interfaces
 -------------------
 
-There are three ``iter`` interfaces that allow simplified access of the algorithms: ``iter``, ``iter2``, and ``iter3``. The ``iter`` interfaces use the :ref:`linop` and :ref:`operatorp`.
+There are three iter interfaces that allow simplified access of the algorithms: iter, iter2, and iter3. The iter interfaces use the :ref:`linop` and :ref:`operatorp`.
 
-The ``iter`` interface considers the problem :math:`\min_x \frac{1}{2} \| Ax - y \|_2^2 + g(x)`. It requires :math:`A^\top A`, :math:`A^\top y`, and :math:`\text{prox}_g` as inputs and outputs `x`. The ``iter`` interface supports ``cg``, ``ist``, ``fista`` and ``admm``. :math:`\text{prox}_g` has to be ``NULL`` for ``cg``.
+The iter interface considers the problem :math:`\min_x \frac{1}{2} \| Ax - y \|_2^2 + g(x)`. It requires :math:`A^\top A`, :math:`A^\top y`, and :math:`\text{prox}_g` as inputs and outputs `x`. The iter interface supports cg, ist, fista and admm. :math:`\text{prox}_g` has to be NULL for cg.
 
-The ``iter2`` interface considers the problem :math:`\min_x \frac{1}{2} \| Ax - y \|_2^2 + \sum_i f_i (G_i x)`. It requires :math:`A^\top A`, :math:`A^\top y`, :math:`\text{prox}_{f_i}`, and :math:`G_i` ``linops`` as inputs and outputs `x`. The ``iter2`` interface supports ``cg``, ``ist``, ``fista`` and ``admm``. :math:`\text{prox}_{f_i}` has to be ``NULL`` for ``cg``. For ``ist`` and ``fista``, the number of :math:`\text{prox}_{f_i}` has to be one.
+The iter2 interface considers the problem :math:`\min_x \frac{1}{2} \| Ax - y \|_2^2 + \sum_i f_i (G_i x)`. It requires :math:`A^\top A`, :math:`A^\top y`, :math:`\text{prox}_{f_i}`, and :math:`G_i` linops as inputs and outputs `x`. The iter2 interface supports cg, ist, fista and admm. :math:`\text{prox}_{f_i}` has to be NULL for cg. For ist and fista, the number of :math:`\text{prox}_{f_i}` has to be one.
 
-The rest of the algorithms belongs to ``iter3``. 
+The iter3 interface contains the rest of the algorithms without a unifying interface.
 
 
-``cg``
+cg
 -------
 
-``cg`` implements the conjugate gradient method. It solves for:
+cg implements the conjugate gradient method. It solves for:
 
 .. math::
 
   \min_x \frac{1}{2} \| Ax - y \|_2^2 + \lambda \| x \|_2^2
   
 * Parameters:
+  
     Regularization :math:`\lambda` and number of iterations
 
 * Input:
+  
     :math:`A^\top A`, and :math:`A^\top y`
 
 * Ouput:
+  
     :math:`x`
 
 * Iteration steps:
@@ -44,10 +47,10 @@ The rest of the algorithms belongs to ``iter3``.
    \beta_k &= \frac{r_{k+1}^\top r_{k+1}}{p_k^\top p_k} \\
    p_{k+1} &= r_{k+1} + \beta_k p_k
 
-``ist``
+ist
 --------
 
-``ist`` implements the iterative soft threshold method, also known as the proximal gradient method.
+ist implements the iterative soft threshold method, also known as the proximal gradient method.
 It solves for:
 
 .. math::
@@ -58,12 +61,15 @@ where :math:`g(x)` is simple, that is the proximal of `g(x)` can be computed eas
 
 
 * Parameters:
+  
       Step-size :math:`\tau` and number of iterations
 
 * Input:
+  
       :math:`A^\top A`, :math:`A^\top y`, and :math:`\text{prox}_g`
 
 * Ouput:
+  
       :math:`x`
 
 * Iteration steps:
@@ -74,10 +80,10 @@ where :math:`g(x)` is simple, that is the proximal of `g(x)` can be computed eas
 
 
 
-``fista``
+fista
 ----------
 
-``fista`` implements the fast iterative soft threshold method, also known as the accelerated proximal gradient method. It solves for:
+fista implements the fast iterative soft threshold method, also known as the accelerated proximal gradient method. It solves for:
 
 .. math::
 
@@ -87,12 +93,15 @@ where :math:`g(x)` is simple, that is the proximal of `g(x)` can be computed eas
 
 
 * Parameters:
+  
       Step-size :math:`\tau` and number of iterations
 
 * Input:
+  
       :math:`A^\top A`, :math:`A^\top y`, and :math:`\text{prox}_g`
 
 * Ouput:
+  
       :math:`x`
 
 * Iteration steps:
@@ -104,10 +113,10 @@ where :math:`g(x)` is simple, that is the proximal of `g(x)` can be computed eas
    z_{k+1} &= x_k + \left( \frac{t_k - 1}{t_{k+1}} \right) (x_k - x_{k-1})
 
    
-``admm``
+admm
 --------
 
-``admm`` implements the alternating direction method of multipliers. It solves for:
+admm implements the alternating direction method of multipliers. It solves for:
 
 .. math::
 
@@ -117,12 +126,15 @@ where :math:`f_i` s are simple, that is the proximal of each `f_i` can be comput
 
 
 * Parameters:
+  
     Convergence parameter :math:`\rho`, and number of iterations
 
 * Input:
+  
      :math:`A^\top A`, :math:`A^\top y`, :math:`\text{prox}_{f_i}`, :math:`G_i`, :math:`G_i^\top`, :math:`G_i^\top G_i`, and :math:`b_i`
 
 * Ouput:
+  
       :math:`x`
 
 * Iteration steps:
