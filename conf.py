@@ -101,7 +101,7 @@ html_theme_options = {
     'logo_only': True,  # if we have a html_logo below, this shows /only/ the logo with no title text
     }
 
-html_style = 'custom_theme.css'
+#html_style = 'custom_theme.css'
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
